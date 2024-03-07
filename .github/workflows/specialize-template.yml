@@ -27,11 +27,13 @@ jobs:
       - name: Specialize Template Parameters
         run: |
           # Replacement Variables
-          NEW_PROJECT_NAME="${GITHUB_REPOSITORY_NAME}"
-          NEW_PROJECT_BUNDLE_ID_PREFIX="com.github.$(echo "$GITHUB_REPOSITORY_OWNER" | sed 's/[^a-zA-Z0-9]//g' | tr '[:upper:]' '[:lower:]')"
+          NEW_PROJECT_NAME="${{ github.event.repository.name }}"
+          echo "New project name: $NEW_PROJECT_NAME"
+          NEW_PROJECT_BUNDLE_ID_PREFIX="com.github.$(echo "${{ github.event.repository.owner.name }}" | sed 's/[^a-zA-Z0-9]//g' | tr '[:upper:]' '[:lower:]')"
+          echo "New project bundle ID prefix: $NEW_PROJECT_BUNDLE_ID_PREFIX"
           
           # Run specialization script (requires variables defined above)
-          ./specialize-template.sh
+          ./specialize-template.sh "$NEW_PROJECT_NAME" "$NEW_PROJECT_BUNDLE_ID_PREFIX"
 
           rm -rf \
             .github/workflows/specialize-template.yml \
