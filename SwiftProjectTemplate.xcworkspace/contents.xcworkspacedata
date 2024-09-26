@@ -5,6 +5,6 @@
       location = "group:SwiftProjectTemplate">
    </FileRef>
    <FileRef
-      location = "group:SwiftProjectTemplateApp/SwiftProjectTemplateApp.xcodeproj">
+      location = "group:SwiftProjectTemplateApp/SwiftProjectTemplateApp/SwiftProjectTemplateApp.xcodeproj">
    </FileRef>
 </Workspace>

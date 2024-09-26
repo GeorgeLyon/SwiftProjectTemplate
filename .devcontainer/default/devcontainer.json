@@ -23,8 +23,7 @@
     "vscode": {
       "extensions": [
         "sswg.swift-lang",
-        "vadimcn.vscode-lldb",
-        "vknabel.vscode-apple-swift-format"
+        "vadimcn.vscode-lldb"
       ],
       "settings": {
         /// LLDB settings for Swift

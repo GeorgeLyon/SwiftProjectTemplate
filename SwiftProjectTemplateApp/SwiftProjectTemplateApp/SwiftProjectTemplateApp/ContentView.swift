@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftProjectTemplate
 
 struct ContentView: View {
   var body: some View {
@@ -7,7 +6,7 @@ struct ContentView: View {
       Image(systemName: "globe")
         .imageScale(.large)
         .foregroundStyle(.tint)
-      Text(SwiftProjectTemplateContent.hello)
+      Text("Hello, world!")
     }
     .padding()
   }
