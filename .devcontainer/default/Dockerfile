@@ -1,1 +1,1 @@
-FROM swift:6.0
+FROM swift:latest
