@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5E7621BA2CD7FA7900E5C4CA /* SwiftProjectTemplatePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 5E7621B92CD7FA7900E5C4CA /* SwiftProjectTemplatePackage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		5E2C493B2CA4F8C9001FB83C /* SwiftProjectTemplateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProjectTemplateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E7621BA2CD7FA7900E5C4CA /* SwiftProjectTemplatePackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = SwiftProjectTemplateApp;
 			packageProductDependencies = (
+				5E7621B92CD7FA7900E5C4CA /* SwiftProjectTemplatePackage */,
 			);
 			productName = SwiftProjectTemplateApp;
 			productReference = 5E2C493B2CA4F8C9001FB83C /* SwiftProjectTemplateApp.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 5E2C49322CA4F8C9001FB83C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5E7621B82CD7FA7900E5C4CA /* XCLocalSwiftPackageReference "../SwiftProjectTemplatePackage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5E2C493C2CA4F8C9001FB83C /* Products */;
 			projectDirPath = "";
@@ -335,6 +344,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		5E7621B82CD7FA7900E5C4CA /* XCLocalSwiftPackageReference "../SwiftProjectTemplatePackage" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SwiftProjectTemplatePackage;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5E7621B92CD7FA7900E5C4CA /* SwiftProjectTemplatePackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftProjectTemplatePackage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5E2C49332CA4F8C9001FB83C /* Project object */;
 }

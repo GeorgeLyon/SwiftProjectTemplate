@@ -33,7 +33,7 @@ jobs:
           echo "New project bundle ID prefix: $NEW_PROJECT_BUNDLE_ID_PREFIX"
           
           # Run specialization script (requires variables defined above)
-          ./specialize-template.sh "$NEW_PROJECT_NAME" "$NEW_PROJECT_BUNDLE_ID_PREFIX"
+          ./specialize-template.sh "$NEW_PROJECT_BUNDLE_ID_PREFIX" "$NEW_PROJECT_NAME"
 
           rm -rf \
             .github/workflows/specialize-template.yml \

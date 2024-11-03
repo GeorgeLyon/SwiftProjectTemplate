@@ -2,15 +2,15 @@
 
 set -eo pipefail
 
-NEW_PROJECT_NAME=$1
-if [[ -z "${NEW_PROJECT_NAME}" ]]; then
-  echo "NEW_PROJECT_NAME is not set"
+NEW_PROJECT_BUNDLE_ID_PREFIX=$1
+if [[ -z "${NEW_PROJECT_BUNDLE_ID_PREFIX}" ]]; then
+  echo "NEW_PROJECT_BUNDLE_ID_PREFIX is not set"
   exit 1
 fi
 
-NEW_PROJECT_BUNDLE_ID_PREFIX=$2
-if [[ -z "${NEW_PROJECT_BUNDLE_ID_PREFIX}" ]]; then
-  echo "NEW_PROJECT_BUNDLE_ID_PREFIX is not set"
+NEW_PROJECT_NAME=$2
+if [[ -z "${NEW_PROJECT_NAME}" ]]; then
+  echo "NEW_PROJECT_NAME is not set"
   exit 1
 fi
 
