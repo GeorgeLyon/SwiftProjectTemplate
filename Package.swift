@@ -5,8 +5,9 @@ import PackageDescription
 let package = Package(
   name: "SwiftProjectTemplate",
   platforms: [
-    .macOS(.v15),
-    .iOS(.v18),
+    /// Use string versions to be more Linux-friendly
+    .macOS("15.0"),
+    .iOS("18.0"),
   ],
   products: [
     .library(
