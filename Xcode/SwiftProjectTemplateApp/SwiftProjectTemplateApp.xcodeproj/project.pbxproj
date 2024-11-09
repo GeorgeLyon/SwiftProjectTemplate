@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E7621BA2CD7FA7900E5C4CA /* SwiftProjectTemplatePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 5E7621B92CD7FA7900E5C4CA /* SwiftProjectTemplatePackage */; };
+		5E28D4402CE02B9A00420ECE /* SwiftProjectTemplateAppPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 5E28D43F2CE02B9A00420ECE /* SwiftProjectTemplateAppPackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E7621BA2CD7FA7900E5C4CA /* SwiftProjectTemplatePackage in Frameworks */,
+				5E28D4402CE02B9A00420ECE /* SwiftProjectTemplateAppPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +71,7 @@
 			name = SwiftProjectTemplateApp;
 			packageProductDependencies = (
 				5E7621B92CD7FA7900E5C4CA /* SwiftProjectTemplatePackage */,
+				5E28D43F2CE02B9A00420ECE /* SwiftProjectTemplateAppPackage */,
 			);
 			productName = SwiftProjectTemplateApp;
 			productReference = 5E2C493B2CA4F8C9001FB83C /* SwiftProjectTemplateApp.app */;
@@ -84,10 +85,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1610;
-				LastUpgradeCheck = 1610;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					5E2C493A2CA4F8C9001FB83C = {
 						CreatedOnToolsVersion = 16.1;
+						LastSwiftMigration = 1620;
 					};
 				};
 			};
@@ -101,7 +103,7 @@
 			mainGroup = 5E2C49322CA4F8C9001FB83C;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				5E7621B82CD7FA7900E5C4CA /* XCLocalSwiftPackageReference "../SwiftProjectTemplatePackage" */,
+				5E28D43E2CE02B9A00420ECE /* XCLocalSwiftPackageReference "../SwiftProjectTemplateAppPackage" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5E2C493C2CA4F8C9001FB83C /* Products */;
@@ -168,6 +170,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -229,6 +232,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -253,10 +257,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftProjectTemplateApp/SwiftProjectTemplateApp.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftProjectTemplateApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -279,6 +287,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 2.1;
@@ -290,10 +299,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftProjectTemplateApp/SwiftProjectTemplateApp.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftProjectTemplateApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -346,13 +359,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		5E7621B82CD7FA7900E5C4CA /* XCLocalSwiftPackageReference "../SwiftProjectTemplatePackage" */ = {
+		5E28D43E2CE02B9A00420ECE /* XCLocalSwiftPackageReference "../SwiftProjectTemplateAppPackage" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SwiftProjectTemplatePackage;
+			relativePath = ../SwiftProjectTemplateAppPackage;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5E28D43F2CE02B9A00420ECE /* SwiftProjectTemplateAppPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftProjectTemplateAppPackage;
+		};
 		5E7621B92CD7FA7900E5C4CA /* SwiftProjectTemplatePackage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftProjectTemplatePackage;
