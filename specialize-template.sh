@@ -37,4 +37,9 @@ echo "Removing backup files..."
 find . -name '*.template-specialization-backup' -exec rm {} \;
 git add -A
 
+echo "Remove this file and the associated GitHub action."
+rm -rf \
+  .github/workflows/specialize-template.yml \
+  specialize-template.sh
+
 echo "Done."
