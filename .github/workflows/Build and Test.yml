@@ -1,0 +1,97 @@
+# Build and Test
+
+name: Build and Test
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    name: Build and Test for Apple Platforms
+
+    strategy:
+      matrix:
+        xcode-version:
+          - "16"
+        xcode-configuration:
+          - destination: "platform=iOS Simulator,name=iPhone 16"
+            sdk: "iphonesimulator"
+          - destination: "platform=macOS"
+            sdk: "macosx"
+        swift-configuration:
+          - "debug"
+          - "release"
+    
+    runs-on: macos-latest
+
+    steps:
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer
+
+      - name: Build
+        run: |
+          xcrun xcodebuild clean build build-for-testing \
+            -workspace Xcode/SwiftProjectTemplate.xcworkspace \
+            -scheme SwiftProjectTemplate \
+            -configuration ${{ matrix.swift-configuration }} \
+            -sdk ${{ matrix.xcode-configuration.sdk }} \
+            -destination ${{ matrix.xcode-configuration.destination }}
+
+      - name: Test
+        run: |
+          xcrun xcodebuild test \
+            -workspace Xcode/SwiftProjectTemplate.xcworkspace \
+            -scheme SwiftProjectTemplate \
+            -configuration ${{ matrix.swift-configuration }} \
+            -sdk ${{ matrix.xcode-configuration.sdk }} \
+            -destination ${{ matrix.xcode-configuration.destination }}
+      
+      - name: Check that repository is clean
+        run:
+          git diff --exit-code
+
+  build-and-test-in-devcontainer:
+    name: Build and Test in Devcontainer
+
+    strategy:
+      matrix:
+        devcontainer-name: ["default"]
+        swift-configuration: ["debug", "release"]
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Make devcontainer '${{ matrix.devcontainer-name }}' singular
+        run: .devcontainer/devcontainer-helper --make-singular ${{ matrix.devcontainer-name }}
+      
+      - name: Initialize devcontainer
+        uses: devcontainers/ci@v0.3
+        with:
+          push: never
+          runCmd: |
+            echo "Devcontainer Initialized."
+      
+      - name: Build
+        uses: devcontainers/ci@v0.3
+        with:
+          push: never
+          runCmd: |
+            swift build --build-tests --configuration ${{ matrix.swift-configuration }}
+
+      - name: Test
+        uses: devcontainers/ci@v0.3
+        with:
+          push: never
+          runCmd: |
+            swift test --skip-build
+    
+      - name: Check that repository is clean
+        run:
+          .devcontainer/devcontainer-helper --clean
+          git diff --exit-code
