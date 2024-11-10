@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SwiftProjectTemplate">
+   </FileRef>
+   <FileRef
       location = "group:SwiftProjectTemplateAppPackage">
    </FileRef>
    <FileRef

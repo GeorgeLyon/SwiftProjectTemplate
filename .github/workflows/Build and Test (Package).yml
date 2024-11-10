@@ -1,4 +1,4 @@
-# Build and Test
+# Build and Test the top-level package
 
 name: Build and Test (SwiftPM)
 on:
