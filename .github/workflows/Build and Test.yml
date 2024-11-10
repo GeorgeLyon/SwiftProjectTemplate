@@ -39,18 +39,18 @@ jobs:
           xcrun xcodebuild clean build build-for-testing \
             -workspace Xcode/SwiftProjectTemplateApp.xcworkspace \
             -scheme SwiftProjectTemplateApp \
-            -configuration ${{ matrix.swift-configuration }} \
-            -sdk ${{ matrix.xcode-configuration.sdk }} \
-            -destination ${{ matrix.xcode-configuration.destination }}
+            -configuration "${{ matrix.swift-configuration }}" \
+            -sdk "${{ matrix.xcode-configuration.sdk }}" \
+            -destination "${{ matrix.xcode-configuration.destination }}"
 
       - name: Test
         run: |
           xcrun xcodebuild test-without-building \
             -workspace Xcode/SwiftProjectTemplateApp.xcworkspace \
             -scheme SwiftProjectTemplateApp \
-            -configuration ${{ matrix.swift-configuration }} \
-            -sdk ${{ matrix.xcode-configuration.sdk }} \
-            -destination ${{ matrix.xcode-configuration.destination }}
+            -configuration "${{ matrix.swift-configuration }}" \
+            -sdk "${{ matrix.xcode-configuration.sdk }}" \
+            -destination "${{ matrix.xcode-configuration.destination }}"
       
       - name: Check that repository is clean
         run:
