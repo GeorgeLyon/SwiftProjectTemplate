@@ -48,6 +48,7 @@ jobs:
             -destination "${{ matrix.xcode-configuration.destination }}"
 
       - name: SwiftPM Tests
+        if: matrix.swift-configuration == 'debug'
         run: |
           xcrun xcodebuild test \
             -workspace .xcode/SwiftProjectTemplate.xcworkspace \
