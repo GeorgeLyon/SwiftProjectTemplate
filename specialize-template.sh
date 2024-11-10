@@ -46,7 +46,7 @@ git add -A
 
 echo "Removing this file and the associated GitHub action..."
 rm -rf \
-  .github/workflows/specialize-template.yml \
+  ".github/workflows/Specialize Template.yml" \
   specialize-template.sh
 
 echo "Done."
