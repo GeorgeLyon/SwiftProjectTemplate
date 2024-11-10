@@ -39,6 +39,7 @@ jobs:
           swift build --build-tests --configuration ${{ matrix.swift-configuration }}
 
       - name: Test
+        if: matrix.swift-configuration == 'debug'
         run: |
           swift test --skip-build
       
