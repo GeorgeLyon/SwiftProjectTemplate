@@ -25,6 +25,7 @@ jobs:
           fetch-depth: 0
 
       - name: Specialize Template Parameters
+        if: github.event.repository.name != 'SwiftProjectTemplate'
         run: |
           # Replacement Variables
           NEW_PROJECT_NAME="${{ github.event.repository.name }}"
@@ -34,6 +35,13 @@ jobs:
           
           # Run specialization script (requires variables defined above)
           ./specialize-template.sh "$NEW_PROJECT_BUNDLE_ID_PREFIX" "$NEW_PROJECT_NAME"
+        
+      # This is just for testing
+      - name: Specialize Template Parameters
+        if: github.event.repository.name == 'SwiftProjectTemplate'
+        run: |
+          # Run specialization script (requires variables defined above)
+          ./specialize-template.sh "com.codebygeorge" "TemplateSpecializationTest"
 
       - name: Commit
         run: |
