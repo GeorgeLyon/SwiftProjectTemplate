@@ -11,7 +11,7 @@
 
   "mounts": [
     /// Keep build products on a volume for performance and to separate host and guest build artifacts
-    "source=${localWorkspaceFolderBasename}-build,target=${containerWorkspaceFolder}/.build,type=volume",
+    "source=${localWorkspaceFolderBasename}-build,target=${containerWorkspaceFolder}/.build,type=volume"
   ],
 
   "remoteEnv": {
