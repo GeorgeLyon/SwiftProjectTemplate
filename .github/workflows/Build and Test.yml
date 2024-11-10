@@ -28,23 +28,26 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Select Xcode
         run: sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer
 
       - name: Build
         run: |
           xcrun xcodebuild clean build build-for-testing \
-            -workspace Xcode/SwiftProjectTemplate.xcworkspace \
-            -scheme SwiftProjectTemplate \
+            -workspace Xcode/SwiftProjectTemplateApp.xcworkspace \
+            -scheme SwiftProjectTemplateApp \
             -configuration ${{ matrix.swift-configuration }} \
             -sdk ${{ matrix.xcode-configuration.sdk }} \
             -destination ${{ matrix.xcode-configuration.destination }}
 
       - name: Test
         run: |
-          xcrun xcodebuild test \
-            -workspace Xcode/SwiftProjectTemplate.xcworkspace \
-            -scheme SwiftProjectTemplate \
+          xcrun xcodebuild test-without-building \
+            -workspace Xcode/SwiftProjectTemplateApp.xcworkspace \
+            -scheme SwiftProjectTemplateApp \
             -configuration ${{ matrix.swift-configuration }} \
             -sdk ${{ matrix.xcode-configuration.sdk }} \
             -destination ${{ matrix.xcode-configuration.destination }}

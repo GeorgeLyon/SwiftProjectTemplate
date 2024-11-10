@@ -7,14 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E28D4402CE02B9A00420ECE /* SwiftProjectTemplateAppPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 5E28D43F2CE02B9A00420ECE /* SwiftProjectTemplateAppPackage */; };
+		5E28D4792CE03E4900420ECE /* SwiftProjectTemplateAppPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 5E28D4782CE03E4900420ECE /* SwiftProjectTemplateAppPackage */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5E28D4572CE03A4E00420ECE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E2C49332CA4F8C9001FB83C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E2C493A2CA4F8C9001FB83C;
+			remoteInfo = SwiftProjectTemplateApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5E28D4512CE03A4E00420ECE /* SwiftProjectTemplateAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftProjectTemplateAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E2C493B2CA4F8C9001FB83C /* SwiftProjectTemplateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProjectTemplateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		5E28D4522CE03A4E00420ECE /* SwiftProjectTemplateAppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SwiftProjectTemplateAppUITests;
+			sourceTree = "<group>";
+		};
 		5E2C493D2CA4F8C9001FB83C /* SwiftProjectTemplateApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SwiftProjectTemplateApp;
@@ -23,21 +39,37 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5E28D44E2CE03A4E00420ECE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E2C49382CA4F8C9001FB83C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E28D4402CE02B9A00420ECE /* SwiftProjectTemplateAppPackage in Frameworks */,
+				5E28D4792CE03E4900420ECE /* SwiftProjectTemplateAppPackage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E28D4772CE03E4900420ECE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5E2C49322CA4F8C9001FB83C = {
 			isa = PBXGroup;
 			children = (
 				5E2C493D2CA4F8C9001FB83C /* SwiftProjectTemplateApp */,
+				5E28D4522CE03A4E00420ECE /* SwiftProjectTemplateAppUITests */,
+				5E28D4772CE03E4900420ECE /* Frameworks */,
 				5E2C493C2CA4F8C9001FB83C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				5E2C493B2CA4F8C9001FB83C /* SwiftProjectTemplateApp.app */,
+				5E28D4512CE03A4E00420ECE /* SwiftProjectTemplateAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +86,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5E28D4502CE03A4E00420ECE /* SwiftProjectTemplateAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E28D4592CE03A4E00420ECE /* Build configuration list for PBXNativeTarget "SwiftProjectTemplateAppUITests" */;
+			buildPhases = (
+				5E28D44D2CE03A4E00420ECE /* Sources */,
+				5E28D44E2CE03A4E00420ECE /* Frameworks */,
+				5E28D44F2CE03A4E00420ECE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E28D4582CE03A4E00420ECE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5E28D4522CE03A4E00420ECE /* SwiftProjectTemplateAppUITests */,
+			);
+			name = SwiftProjectTemplateAppUITests;
+			packageProductDependencies = (
+			);
+			productName = SwiftProjectTemplateAppUITests;
+			productReference = 5E28D4512CE03A4E00420ECE /* SwiftProjectTemplateAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		5E2C493A2CA4F8C9001FB83C /* SwiftProjectTemplateApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E2C494A2CA4F8CA001FB83C /* Build configuration list for PBXNativeTarget "SwiftProjectTemplateApp" */;
@@ -70,8 +126,7 @@
 			);
 			name = SwiftProjectTemplateApp;
 			packageProductDependencies = (
-				5E7621B92CD7FA7900E5C4CA /* SwiftProjectTemplatePackage */,
-				5E28D43F2CE02B9A00420ECE /* SwiftProjectTemplateAppPackage */,
+				5E28D4782CE03E4900420ECE /* SwiftProjectTemplateAppPackage */,
 			);
 			productName = SwiftProjectTemplateApp;
 			productReference = 5E2C493B2CA4F8C9001FB83C /* SwiftProjectTemplateApp.app */;
@@ -84,9 +139,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1610;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					5E28D4502CE03A4E00420ECE = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 5E2C493A2CA4F8C9001FB83C;
+					};
 					5E2C493A2CA4F8C9001FB83C = {
 						CreatedOnToolsVersion = 16.1;
 						LastSwiftMigration = 1620;
@@ -103,7 +162,7 @@
 			mainGroup = 5E2C49322CA4F8C9001FB83C;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				5E28D43E2CE02B9A00420ECE /* XCLocalSwiftPackageReference "../SwiftProjectTemplateAppPackage" */,
+				5E28D45C2CE03D7200420ECE /* XCLocalSwiftPackageReference "../SwiftProjectTemplateAppPackage" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5E2C493C2CA4F8C9001FB83C /* Products */;
@@ -111,11 +170,19 @@
 			projectRoot = "";
 			targets = (
 				5E2C493A2CA4F8C9001FB83C /* SwiftProjectTemplateApp */,
+				5E28D4502CE03A4E00420ECE /* SwiftProjectTemplateAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5E28D44F2CE03A4E00420ECE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E2C49392CA4F8C9001FB83C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -126,6 +193,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5E28D44D2CE03A4E00420ECE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E2C49372CA4F8C9001FB83C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,7 +209,57 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5E28D4582CE03A4E00420ECE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E2C493A2CA4F8C9001FB83C /* SwiftProjectTemplateApp */;
+			targetProxy = 5E28D4572CE03A4E00420ECE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5E28D45A2CE03A4E00420ECE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.georgelyon.SwiftProjectTemplateApp.SwiftProjectTemplateAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = SwiftProjectTemplateApp;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		5E28D45B2CE03A4E00420ECE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.georgelyon.SwiftProjectTemplateApp.SwiftProjectTemplateAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = SwiftProjectTemplateApp;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
 		5E2C49482CA4F8CA001FB83C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -277,10 +401,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.georgelyon.SwiftProjectTemplateApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -290,7 +414,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.1;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -319,10 +443,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.georgelyon.SwiftProjectTemplateApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -331,13 +455,22 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 2.1;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5E28D4592CE03A4E00420ECE /* Build configuration list for PBXNativeTarget "SwiftProjectTemplateAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E28D45A2CE03A4E00420ECE /* Debug */,
+				5E28D45B2CE03A4E00420ECE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5E2C49362CA4F8C9001FB83C /* Build configuration list for PBXProject "SwiftProjectTemplateApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -359,20 +492,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		5E28D43E2CE02B9A00420ECE /* XCLocalSwiftPackageReference "../SwiftProjectTemplateAppPackage" */ = {
+		5E28D45C2CE03D7200420ECE /* XCLocalSwiftPackageReference "../SwiftProjectTemplateAppPackage" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SwiftProjectTemplateAppPackage;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5E28D43F2CE02B9A00420ECE /* SwiftProjectTemplateAppPackage */ = {
+		5E28D4782CE03E4900420ECE /* SwiftProjectTemplateAppPackage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftProjectTemplateAppPackage;
-		};
-		5E7621B92CD7FA7900E5C4CA /* SwiftProjectTemplatePackage */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SwiftProjectTemplatePackage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
