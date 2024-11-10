@@ -17,9 +17,11 @@ jobs:
         xcode-version:
           - "16"
         xcode-configuration:
-          - destination: "platform=iOS Simulator,name=iPhone 16"
+          - name: iOS Simulator
+            destination: "platform=iOS Simulator,name=iPhone 16"
             sdk: "iphonesimulator"
-          - destination: "platform=macOS"
+          - name: macOS
+            destination: "platform=macOS"
             sdk: "macosx"
         swift-configuration:
           - "debug"
@@ -57,7 +59,7 @@ jobs:
       - name: Upload Test Results
         uses: actions/upload-artifact@v4
         with:
-          name: Test Results
+          name: Test Results (${{ matrix.xcode-configuration.name }})
           path: .build/Xcode.noindex/DerivedData/Logs/Test
       
       - name: Check that repository is clean
