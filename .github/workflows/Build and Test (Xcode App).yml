@@ -40,7 +40,7 @@ jobs:
       - name: Build
         run: |
           xcrun xcodebuild clean build \
-            -workspace .xcode/SwiftProjectTemplateApp.xcworkspace \
+            -workspace .xcode/SwiftProjectTemplate.xcworkspace \
             -scheme SwiftProjectTemplateApp \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.swift-configuration }}" \
@@ -50,7 +50,7 @@ jobs:
       - name: SwiftPM Tests
         run: |
           xcrun xcodebuild test \
-            -workspace .xcode/SwiftProjectTemplateApp.xcworkspace \
+            -workspace .xcode/SwiftProjectTemplate.xcworkspace \
             -scheme SwiftProjectTemplateAppPackage \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.swift-configuration }}" \
@@ -60,7 +60,7 @@ jobs:
       - name: UI Tests
         run: |
           xcrun xcodebuild test \
-            -workspace .xcode/SwiftProjectTemplateApp.xcworkspace \
+            -workspace .xcode/SwiftProjectTemplate.xcworkspace \
             -scheme SwiftProjectTemplateAppUITests \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.swift-configuration }}" \
