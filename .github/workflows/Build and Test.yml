@@ -25,7 +25,7 @@ jobs:
           - "debug"
           - "release"
     
-    runs-on: macos-latest
+    runs-on: macos-15
 
     steps:
       - name: Checkout
@@ -85,11 +85,19 @@ jobs:
         with:
           push: never
           runCmd: |
+            swift build --configuration ${{ matrix.swift-configuration }}
+
+      - name: Build Tests
+        if: matrix.swift-configuration == 'debug'
+        uses: devcontainers/ci@v0.3
+        with:
+          push: never
+          runCmd: |
             swift build --build-tests --configuration ${{ matrix.swift-configuration }}
 
       - name: Test
         uses: devcontainers/ci@v0.3
-        if: matrix.swift-configuration != 'release'
+        if: matrix.swift-configuration == 'debug'
         with:
           push: never
           runCmd: |
