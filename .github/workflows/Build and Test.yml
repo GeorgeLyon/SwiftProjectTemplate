@@ -89,6 +89,7 @@ jobs:
 
       - name: Test
         uses: devcontainers/ci@v0.3
+        if: matrix.swift-configuration != 'release'
         with:
           push: never
           runCmd: |
