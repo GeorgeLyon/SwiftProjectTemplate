@@ -9,9 +9,7 @@ on:
       - main
 
 jobs:
-  build-and-test:
-    name: Build and Test for Apple Platforms
-
+  build-and-test-xcode:
     strategy:
       matrix:
         xcode-version:
@@ -28,6 +26,8 @@ jobs:
           - "release"
     
     runs-on: macos-15
+    
+    name: Build and Test (${{ matrix.xcode-configuration.name}}, ${{ matrix.swift-configuration }})
 
     steps:
       - name: Checkout
@@ -66,13 +66,14 @@ jobs:
         run:
           git diff --exit-code
 
-  build-and-test-in-devcontainer:
-    name: Build and Test in Devcontainer
+  build-and-test-devcontainer:
 
     strategy:
       matrix:
         devcontainer-name: ["default"]
         swift-configuration: ["debug", "release"]
+
+    name: Build and Test (devcontainer/${{ matrix.devcontainer-name }}, ${{ matrix.swift-configuration }})
 
     runs-on: ubuntu-latest
     
