@@ -3,6 +3,7 @@
 
 name: Specialize Template
 on:
+  pull_request:
   push:
     branches: [main]
 
