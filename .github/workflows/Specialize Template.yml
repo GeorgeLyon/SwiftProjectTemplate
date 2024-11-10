@@ -13,7 +13,6 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    if: github.event.repository.name != 'SwiftProjectTemplate'
     steps:
 
       - name: Checkout
@@ -43,6 +42,7 @@ jobs:
           git commit -a --amend --no-edit --reset-author
 
       - name: Push changes
+        if: github.event.repository.name != 'SwiftProjectTemplate'
         uses: ad-m/github-push-action@v0.8.0
         with:
           branch: main
