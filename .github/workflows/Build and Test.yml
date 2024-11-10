@@ -36,7 +36,7 @@ jobs:
 
       - name: Build
         run: |
-          xcrun xcodebuild clean build build-for-testing \
+          xcrun xcodebuild clean build \
             -workspace Xcode/SwiftProjectTemplateApp.xcworkspace \
             -scheme SwiftProjectTemplateApp \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
@@ -46,9 +46,9 @@ jobs:
 
       - name: Test
         run: |
-          xcrun xcodebuild test-without-building \
+          xcrun xcodebuild test \
             -workspace Xcode/SwiftProjectTemplateApp.xcworkspace \
-            -scheme SwiftProjectTemplateApp \
+            -scheme SwiftProjectTemplateAppUITests \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.swift-configuration }}" \
             -sdk "${{ matrix.xcode-configuration.sdk }}" \
