@@ -43,7 +43,7 @@ jobs:
       - name: Build
         run: |
           xcrun xcodebuild clean build \
-            -workspace ${REPO_NAME}.xcworkspace \
+            -workspace .xcode/${REPO_NAME}.xcworkspace \
             -scheme ${REPO_NAME}App \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.build-configuration }}" \
@@ -54,7 +54,7 @@ jobs:
         run: |
           REPO_NAME=${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}
           xcrun xcodebuild test \
-            -workspace ${REPO_NAME}.xcworkspace \
+            -workspace .xcode/${REPO_NAME}.xcworkspace \
             -scheme ${REPO_NAME}App \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.build-configuration }}" \
@@ -63,7 +63,7 @@ jobs:
       - name: UI Tests
         run: |
           xcrun xcodebuild test \
-            -workspace ${REPO_NAME}.xcworkspace \
+            -workspace .xcode/${REPO_NAME}.xcworkspace \
             -scheme ${REPO_NAME}App \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.build-configuration }}" \
