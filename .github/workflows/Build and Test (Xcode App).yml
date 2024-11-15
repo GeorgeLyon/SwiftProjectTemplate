@@ -70,6 +70,7 @@ jobs:
             -destination "${{ matrix.xcode-configuration.destination }}"
 
       - name: Upload Test Results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: Test Results (${{ matrix.xcode-configuration.name }}, ${{ matrix.build-configuration }})
