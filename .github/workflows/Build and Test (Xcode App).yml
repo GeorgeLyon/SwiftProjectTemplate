@@ -55,7 +55,7 @@ jobs:
           REPO_NAME=${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}
           xcrun xcodebuild test \
             -workspace ${REPO_NAME}.xcworkspace \
-            -scheme ${REPO_NAME}App \
+            -scheme ${REPO_NAME}AppPackage \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.build-configuration }}" \
             -destination "${{ matrix.xcode-configuration.destination }}"
@@ -64,7 +64,7 @@ jobs:
         run: |
           xcrun xcodebuild test \
             -workspace ${REPO_NAME}.xcworkspace \
-            -scheme ${REPO_NAME}App \
+            -scheme ${REPO_NAME}AppUITests \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.build-configuration }}" \
             -destination "${{ matrix.xcode-configuration.destination }}"
