@@ -1,5 +1,5 @@
 # Build and Test the Xcode App
-# This tests the `SwiftProjectTemplateAppPackage` as well as the `SwiftProjectTemplateApp` Xcode project.
+# This tests the `AppPackage` as well as the `App` Xcode project.
 
 name: Build and Test (Xcode)
 on:
@@ -35,11 +35,16 @@ jobs:
       - name: Select Xcode
         run: sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer
 
+      # When we specialize this template, we don't have permissions to change workflows, so we cant reference the name of the project here.
+      - name: Get Repository Name
+        run: |
+          echo "REPO_NAME=${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}" >> $GITHUB_ENV
+
       - name: Build
         run: |
           xcrun xcodebuild clean build \
-            -workspace SwiftProjectTemplate.xcworkspace \
-            -scheme SwiftProjectTemplateApp \
+            -workspace ${REPO_NAME}.xcworkspace \
+            -scheme ${REPO_NAME}App \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.build-configuration }}" \
             -destination "${{ matrix.xcode-configuration.destination }}"
@@ -47,9 +52,10 @@ jobs:
       - name: SwiftPM Tests
         if: matrix.build-configuration == 'Debug'
         run: |
+          REPO_NAME=${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}
           xcrun xcodebuild test \
-            -workspace SwiftProjectTemplate.xcworkspace \
-            -scheme SwiftProjectTemplateAppPackage \
+            -workspace ${REPO_NAME}.xcworkspace \
+            -scheme ${REPO_NAME}App \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.build-configuration }}" \
             -destination "${{ matrix.xcode-configuration.destination }}"
@@ -57,8 +63,8 @@ jobs:
       - name: UI Tests
         run: |
           xcrun xcodebuild test \
-            -workspace SwiftProjectTemplate.xcworkspace \
-            -scheme SwiftProjectTemplateAppUITests \
+            -workspace ${REPO_NAME}.xcworkspace \
+            -scheme ${REPO_NAME}App \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.build-configuration }}" \
             -destination "${{ matrix.xcode-configuration.destination }}"
