@@ -1,5 +1,5 @@
 # Build and Test the Xcode App
-# This tests the `SwiftProjectTemplateAppPackage` as well as the `SwiftProjectTemplateApp` Xcode project.
+# This tests the `AppPackage` as well as the `App` Xcode project.
 
 name: Build and Test (Xcode)
 on:
@@ -28,6 +28,10 @@ jobs:
     
     name: Build and Test (${{ matrix.xcode-configuration.name }}, ${{ matrix.build-configuration }})
 
+    env:
+      # When we specialize this template, we don't have permissions to change workflows, so we cant reference the name of the project here.
+      project-name: ${{ github.repository.name }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,8 +42,8 @@ jobs:
       - name: Build
         run: |
           xcrun xcodebuild clean build \
-            -workspace SwiftProjectTemplate.xcworkspace \
-            -scheme SwiftProjectTemplateApp \
+            -workspace ${{ env.project-name }}.xcworkspace \
+            -scheme ${{ env.project-name }}App \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.build-configuration }}" \
             -destination "${{ matrix.xcode-configuration.destination }}"
@@ -48,8 +52,8 @@ jobs:
         if: matrix.build-configuration == 'Debug'
         run: |
           xcrun xcodebuild test \
-            -workspace SwiftProjectTemplate.xcworkspace \
-            -scheme SwiftProjectTemplateAppPackage \
+            -workspace ${{ env.project-name }}.xcworkspace \
+            -scheme ${{ env.project-name }}App \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.build-configuration }}" \
             -destination "${{ matrix.xcode-configuration.destination }}"
@@ -57,8 +61,8 @@ jobs:
       - name: UI Tests
         run: |
           xcrun xcodebuild test \
-            -workspace SwiftProjectTemplate.xcworkspace \
-            -scheme SwiftProjectTemplateAppUITests \
+            -workspace ${{ env.project-name }}.xcworkspace \
+            -scheme ${{ env.project-name }}App \
             -derivedDataPath ".build/Xcode.noindex/DerivedData" \
             -configuration "${{ matrix.build-configuration }}" \
             -destination "${{ matrix.xcode-configuration.destination }}"
