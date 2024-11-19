@@ -14,9 +14,6 @@ if [[ -z "${NEW_PROJECT_NAME}" ]]; then
   exit 1
 fi
 
-# Remove symlinks, as they can't be modified using `sed`
-rm SwiftProjectTemplate.xcworkspace .xcode/SwiftProjectTemplate
-
 # `find` returns folders before their children, so this will always rename the parent folder first.
 # We re-run `find` every iteration so that the path is correct after renaming a parent folder.
 echo "Moving files..."
@@ -35,10 +32,6 @@ git ls-files --cached --modified --others --exclude-standard -z |
 echo "Replacing bundle identifier..."
 git ls-files --cached --modified --others --exclude-standard -z |
   xargs -0 -I {} sed -i.template-specialization-backup "s/com.github.georgelyon/$NEW_PROJECT_BUNDLE_ID_PREFIX/g" {}
-
-# Re-add symlinks
-ln -s ".xcode/${NEW_PROJECT_NAME}.xcworkspace" "${NEW_PROJECT_NAME}.xcworkspace"
-(cd .xcode; ln -s .. "${NEW_PROJECT_NAME}")
 
 echo "Removing backup files..."
 find . -name '*.template-specialization-backup' -exec rm {} \;
