@@ -15,7 +15,7 @@ let package = Package(
     )
   ],
   dependencies: [
-    .package(name: "SwiftProjectTemplate", path: "../SwiftProjectTemplate")
+    .package(name: "SwiftProjectTemplate", path: "../..")
   ],
   targets: [
     .target(
