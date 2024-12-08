@@ -18,7 +18,7 @@ fi
 # We re-run `find` every iteration so that the path is correct after renaming a parent folder.
 echo "Moving files..."
 while FILE=$(find . -name '*SwiftProjectTemplate*' | head -n1) && [ -n "$FILE" ]; do
-  NEW_FILE=$(echo $FILE | sed -e "s/SwiftProjectTemplate/$NEW_PROJECT_NAME/")
+  NEW_FILE=${FILE//SwiftProjectTemplate/$NEW_PROJECT_NAME}
   echo "mv \"$FILE\" \"$NEW_FILE\""
   mv "$FILE" "$NEW_FILE"
 done
